@@ -20,14 +20,14 @@ h1 {
     text-align: center;
     text-decoration: none;
     padding: 12px;
-    width: 33%;
+    width: 33.33%;
   }
   
   /* The subnavigation menu */
   .subnav {
     float: left;
     overflow: auto;
-    width: 33%;
+    width: 33.33%;
 
   }
   
