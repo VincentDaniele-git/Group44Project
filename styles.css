@@ -1,8 +1,12 @@
 /* The navigation menu */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
     text-align: center;
     background: #1abc9c;
-    margin: 0;
     padding: 30px;
 }
 
