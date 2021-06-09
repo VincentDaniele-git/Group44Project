@@ -2,6 +2,32 @@
 
     <head>
         <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {
+            'packages':['geochart'],
+            'mapsApiKey': 'AIzaSyDdTZ126C3wFfvUc52hZU5MhZKmfuQLK_k'
+          });
+          google.charts.setOnLoadCallback(drawRegionsMap);
+    
+          function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+              ['Country', 'Confirmed Covid Cases'],
+              ['US', 31929199],
+              ['India', 16263695],
+              ['Brazil', 14167973],
+            ]);
+    
+            var options = {
+              backgroundColor: '#81d4fa',
+              colorAxis: {minValue: 0, colors: ['#00FF00', '#FF0000']},
+            };
+    
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    
+            chart.draw(data, options);
+          }
+        </script>
 
     </head>
 
@@ -24,10 +50,40 @@
           </div>
         
         <div class="row">
-          <div class="side-left">Global Confirmed Number of COVID-19 Cases</div>
-          <div class="main">Big Graphs</div>
-          <div class="side-right">Top 3 Countries by Confirmed Cases</div>
+          <div class="side-left">Global Confirmed Number of COVID-19 Cases:
+            <ul>
+              <li>144,741,753 Confirmed Covid-19 Cases</li>
+            </ul>
+          </div>
+          <div class="main">
+            <div id="regions_div" style="width: 920px; height: 660px;"></div>
+          </div>
+          <div class="side-right">
+            Top 3 Countries by Confirmed Cases:
+            <ol>
+              <li>USA - 31,929,199 Confirmed Cases</li>
+              <li>India - 16,263,695 Confirmed Cases</li>
+              <li>Brazil - 14,167,973 Confirmed Cases</li>
+            </ol>
+          </div>
         </div>
+        <div class="row">
+          <div class="side-left">Global Confirmed Number of Covid-19 Deaths:
+            <ul>
+              <li>3,082,663 Confirmed Covid-19 Deaths</li>
+            </ul>
+          </div>
+          <div class="main"></div>
+          <div class="side-right">
+            Top 3 Countries by Confirmed Deaths:
+            <ol>
+              <li>USA - 581,166 Confirmed Deaths</li>
+              <li>Brazil - 383,502 Confirmed Deaths</li>
+              <li>Mexico - 214,079 Confirmed Deaths</li>
+            </ol>
+          </div>
+        </div>
+        
 
     </body>
 </html> 
